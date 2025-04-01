@@ -1,0 +1,19 @@
+# .gitpod.yml
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      dotnet restore
+      dotnet build
+    command: dotnet run
+
+vscode:
+  extensions:
+    - ms-dotnettools.csharp
+    - ms-vscode.csharp
+    - ms-vscode.cpptools
+
+ports:
+  - port: 5000
+    onOpen: open-browser
